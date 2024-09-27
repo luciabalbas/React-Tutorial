@@ -33,22 +33,56 @@ import ReactDOM from 'react-dom/client'
 // }
 
 // N E S T   C O M P O N E N T
-function Greeting() {
+// function Greeting() {
+//   return (
+//     <div>
+//       {/* <h2>John Doe</h2> */}
+//       <Person />
+//       {/* <p>This is my message</p> */}
+//       <Message />
+//     </div>
+//   )
+// }
+
+// const Person = () => <h2>john doe</h2>
+// const Message = () => {
+//   return <p>this is my message</p>
+// }
+
+//const root = ReactDOM.createRoot(document.getElementById('root'))
+
+// root.render(<Greeting />)
+
+// B O O K L I S T
+const Booklist = () => {
   return (
-    <div>
-      {/* <h2>John Doe</h2> */}
-      <Person />
-      {/* <p>This is my message</p> */}
-      <Message />
-    </div>
+    <section>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
   )
 }
 
-const Person = () => <h2>john doe</h2>
-const Message = () => {
-  return <p>this is my message</p>
+const Book = () => {
+  return (
+    <article>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  )
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
+const Image = () => (
+  <img
+    src="https://m.media-amazon.com/images/I/91rcGxdclIL._SY466_.jpg"
+    alt="Onyx Storm"
+  />
+)
+const Title = () => <h2>Onyx Storm</h2>
+const Author = () => <h4>Rebecca Yarros</h4>
 
-root.render(<Greeting />)
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<Booklist />)
