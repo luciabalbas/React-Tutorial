@@ -5,7 +5,9 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
+**/.vscode
 
 #DS_Store
 .DS_Store/*
 .DS_Store?
+**/.DS_Store
