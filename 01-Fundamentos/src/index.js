@@ -2,6 +2,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
+// I M P O R T   C S S
+import './index.css'
+
 // F I R S T   C O M P O N E N T
 // function Greeting() {
 //   return (
@@ -56,7 +59,7 @@ import ReactDOM from 'react-dom/client'
 // B O O K L I S T
 const Booklist = () => {
   return (
-    <section>
+    <section className="booklist">
       <Book />
       <Book />
       <Book />
@@ -67,7 +70,7 @@ const Booklist = () => {
 
 const Book = () => {
   return (
-    <article>
+    <article className="book">
       <Image />
       <Title />
       <Author />
