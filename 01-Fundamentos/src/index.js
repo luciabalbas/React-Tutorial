@@ -85,7 +85,15 @@ const Image = () => (
   />
 )
 const Title = () => <h2>Onyx Storm</h2>
-const Author = () => <h4>Rebecca Yarros</h4>
+const Author = () => {
+  const inlineHeadingStyles = {
+    color: '#617d98',
+    fontSize: '0.75rem',
+    marginTop: '0.5rem',
+  }
+  // <h4 style={{ color: '#617d98', fontSize: '0.75rem', marginTop: '0.5rem' }}>
+  return <h4 style={inlineHeadingStyles}>Rebecca Yarros</h4>
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(<Booklist />)
