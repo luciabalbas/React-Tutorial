@@ -57,31 +57,26 @@ import './index.css'
 // root.render(<Greeting />)
 
 // B O O K L I S T
+const title = 'Onyx Storm'
+const author = 'Rebecca Yarros'
+const img = 'https://m.media-amazon.com/images/I/91rcGxdclIL._SY466_.jpg'
+
 const Booklist = () => {
   return (
     <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Book author={author} title={title} img={img} />
+      <Book author={author} title={title} img={img} />
     </section>
   )
 }
 
-const author = 'Rebecca Yarros'
-const Book = () => {
-  const title = 'Onyx Storm'
+const Book = (props) => {
+  console.log(props)
   return (
     <article className="book">
-      {/* <Image />
-      <Title />
-      <Author /> */}
-      <img
-        src="https://m.media-amazon.com/images/I/91rcGxdclIL._SY466_.jpg"
-        alt="Onyx Storm"
-      />
-      <h2>{title}</h2>
-      <h4>{author}</h4>
+      <img src={props.img} alt={props.title} />
+      <h2>{props.title}</h2>
+      <h4>{props.author}</h4>
     </article>
   )
 }
