@@ -56,16 +56,25 @@ import './index.css'
 
 // root.render(<Greeting />)
 
-// B O O K L I S T
-const title = 'Onyx Storm'
-const author = 'Rebecca Yarros'
-const img = 'https://m.media-amazon.com/images/I/91rcGxdclIL._SY466_.jpg'
+// // B O O K L I S T
+
+// const title = 'Onyx Storm'
+// const author = 'Rebecca Yarros'
+// const img = 'https://m.media-amazon.com/images/I/91rcGxdclIL._SY466_.jpg'
 
 const Booklist = () => {
   return (
     <section className="booklist">
-      <Book author={author} title={title} img={img} />
-      <Book author={author} title={title} img={img} />
+      <Book
+        author={firstBook.author}
+        title={firstBook.title}
+        img={firstBook.img}
+      />
+      <Book
+        author={secondBook.author}
+        title={secondBook.title}
+        img={secondBook.img}
+      />
     </section>
   )
 }
@@ -79,6 +88,18 @@ const Book = (props) => {
       <h4>{props.author}</h4>
     </article>
   )
+}
+
+const firstBook = {
+  author: 'Rebecca Yarros',
+  title: 'Onyx Storm',
+  img: 'https://m.media-amazon.com/images/I/91rcGxdclIL._SY466_.jpg',
+}
+
+const secondBook = {
+  author: 'Holly Jackson',
+  title: "A Good Girl's Guide to Murder",
+  img: 'https://m.media-amazon.com/images/I/81E3hDPr3eL._SY425_.jpg',
 }
 
 // const Image = () => (
