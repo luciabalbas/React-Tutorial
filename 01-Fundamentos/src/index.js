@@ -87,24 +87,24 @@ import './index.css'
 const Booklist = () => {
   return (
     <section className="booklist">
-      {books.map((book) => {
+      {books.map((book, index) => {
         console.log(book)
-        const { img, title, author } = book
-        return <Book title={title} img={img} author={author} />
+        const { img, title, author, id } = book
+        // return <Book title={title} img={img} author={author} />
+        return <Book book={book} key={index} />
       })}
     </section>
   )
 }
 
-const Book = ({ img, title, author, children }) => {
+const Book = (props) => {
   // console.log(props)
-  // const { img, title, author } = props
+  const { img, title, author } = props.book
   return (
     <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
       <h4>{author}</h4>
-      {children}
     </article>
   )
 }
@@ -114,11 +114,13 @@ const books = [
     author: 'Rebecca Yarros',
     title: 'Onyx Storm',
     img: 'https://m.media-amazon.com/images/I/91rcGxdclIL._SY466_.jpg',
+    id: 1,
   },
   {
     author: 'Holly Jackson',
     title: "A Good Girl's Guide to Murder",
     img: 'https://m.media-amazon.com/images/I/81E3hDPr3eL._SY425_.jpg',
+    id: 2,
   },
 ]
 
