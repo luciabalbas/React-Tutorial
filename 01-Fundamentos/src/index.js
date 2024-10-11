@@ -62,24 +62,36 @@ import './index.css'
 // const author = 'Rebecca Yarros'
 // const img = 'https://m.media-amazon.com/images/I/91rcGxdclIL._SY466_.jpg'
 
+// const Booklist = () => {
+//   return (
+//     <section className="booklist">
+//       <Book
+//         author={firstBook.author}
+//         title={firstBook.title}
+//         img={firstBook.img}>
+//         <p>
+//           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque
+//           repudiandae inventore eos qui animi sed iusto alias eius ea sapiente.
+//         </p>
+//         <button>click me</button>
+//       </Book>
+//       <Book
+//         author={secondBook.author}
+//         title={secondBook.title}
+//         img={secondBook.img}
+//       />
+//     </section>
+//   )
+// }
+
 const Booklist = () => {
   return (
     <section className="booklist">
-      <Book
-        author={firstBook.author}
-        title={firstBook.title}
-        img={firstBook.img}>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque
-          repudiandae inventore eos qui animi sed iusto alias eius ea sapiente.
-        </p>
-        <button>click me</button>
-      </Book>
-      <Book
-        author={secondBook.author}
-        title={secondBook.title}
-        img={secondBook.img}
-      />
+      {books.map((book) => {
+        console.log(book)
+        const { img, title, author } = book
+        return <Book title={title} img={img} author={author} />
+      })}
     </section>
   )
 }
@@ -97,17 +109,30 @@ const Book = ({ img, title, author, children }) => {
   )
 }
 
-const firstBook = {
-  author: 'Rebecca Yarros',
-  title: 'Onyx Storm',
-  img: 'https://m.media-amazon.com/images/I/91rcGxdclIL._SY466_.jpg',
-}
+const books = [
+  {
+    author: 'Rebecca Yarros',
+    title: 'Onyx Storm',
+    img: 'https://m.media-amazon.com/images/I/91rcGxdclIL._SY466_.jpg',
+  },
+  {
+    author: 'Holly Jackson',
+    title: "A Good Girl's Guide to Murder",
+    img: 'https://m.media-amazon.com/images/I/81E3hDPr3eL._SY425_.jpg',
+  },
+]
 
-const secondBook = {
-  author: 'Holly Jackson',
-  title: "A Good Girl's Guide to Murder",
-  img: 'https://m.media-amazon.com/images/I/81E3hDPr3eL._SY425_.jpg',
-}
+// const firstBook = {
+//   author: 'Rebecca Yarros',
+//   title: 'Onyx Storm',
+//   img: 'https://m.media-amazon.com/images/I/91rcGxdclIL._SY466_.jpg',
+// }
+
+// const secondBook = {
+//   author: 'Holly Jackson',
+//   title: "A Good Girl's Guide to Murder",
+//   img: 'https://m.media-amazon.com/images/I/81E3hDPr3eL._SY425_.jpg',
+// }
 
 // const Image = () => (
 //   <img
