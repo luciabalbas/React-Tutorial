@@ -89,7 +89,7 @@ const Booklist = () => {
     <section className="booklist">
       {books.map((book, index) => {
         console.log(book)
-        const { img, title, author, id } = book
+        // const { img, title, author, id } = book
         // return <Book title={title} img={img} author={author} />
         return <Book {...book} key={index} />
       })}
@@ -99,7 +99,7 @@ const Booklist = () => {
 
 const Book = (props) => {
   // console.log(props)
-  const { img, title, author } = props.book
+  const { img, title, author } = props
   return (
     <article className="book">
       <img src={img} alt={title} />
