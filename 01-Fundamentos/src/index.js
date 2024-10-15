@@ -148,12 +148,12 @@ const EventExample = () => {
         <input
           type="text"
           name="example"
-          onChange={handleFormInput}
+          onChange={(e) => console.log(e.target.value)}
           style={{ margin: '1rem 0' }}
         />
         <button type="submit">submit</button>
         <div>
-          <button onClick={handleButtonClick} type="button">
+          <button onClick={() => console.log('clicked me')} type="button">
             click me
           </button>
         </div>
