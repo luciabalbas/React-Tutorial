@@ -89,7 +89,7 @@ const Booklist = () => {
     <section className="booklist">
       <EventExample />
       {books.map((book, index) => {
-        console.log(book)
+        // console.log(book)
         // const { img, title, author, id } = book
         // return <Book title={title} img={img} author={author} />
         return <Book {...book} key={index} />
@@ -127,15 +127,23 @@ const books = [
 
 // E V E N T S
 const EventExample = () => {
-  const handleFormInput = () => {
+  const handleFormInput = (e) => {
+    // console.log(e)
+    console.log(e.target)
+    console.log(e.target.name)
+    console.log(e.target.value)
     console.log('handle form input')
   }
   const handleButtonClick = () => {
     alert('handle button click!')
   }
+  const handleFormSubmission = (e) => {
+    e.preventDefault()
+    console.log('form submitetted')
+  }
   return (
     <section>
-      <form>
+      <form onSubmit={handleFormSubmission}>
         <h2>Typical Form</h2>
         <input
           type="text"
