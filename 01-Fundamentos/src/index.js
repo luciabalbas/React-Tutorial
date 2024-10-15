@@ -85,14 +85,18 @@ import './index.css'
 // }
 
 const Booklist = () => {
+  const someValue = 'shakeAndBake'
+  const displayValue = () => {
+    console.log(someValue)
+  }
   return (
     <section className="booklist">
-      <EventExample />
+      {/* <EventExample /> */}
       {books.map((book, index) => {
         // console.log(book)
         // const { img, title, author, id } = book
         // return <Book title={title} img={img} author={author} />
-        return <Book {...book} key={index} />
+        return <Book {...book} key={index} displayValue={displayValue} />
       })}
     </section>
   )
@@ -100,11 +104,15 @@ const Booklist = () => {
 
 const Book = (props) => {
   // console.log(props)
-  const { img, title, author } = props
+  const { img, title, author, displayValue } = props
+  const displayTitle = () => {
+    console.log(title)
+  }
   return (
     <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
+      <button onClick={displayValue}>click me</button>
       <h4>{author}</h4>
     </article>
   )
