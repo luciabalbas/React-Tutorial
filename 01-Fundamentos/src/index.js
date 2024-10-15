@@ -91,7 +91,7 @@ const Booklist = () => {
         console.log(book)
         const { img, title, author, id } = book
         // return <Book title={title} img={img} author={author} />
-        return <Book book={book} key={index} />
+        return <Book {...book} key={index} />
       })}
     </section>
   )
