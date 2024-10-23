@@ -100,15 +100,18 @@ const Booklist = () => {
   //   console.log(book)
   // }
   return (
-    <section className="booklist">
-      {/* <EventExample /> */}
-      {books.map((book) => {
-        // console.log(book)
-        // const { img, title, author, id } = book
-        // return <Book title={title} img={img} author={author} />
-        return <Book {...book} key={book.id} />
-      })}
-    </section>
+    <>
+      <h1>amazon best sellers</h1>
+      <section className="booklist">
+        {/* <EventExample /> */}
+        {books.map((book, index) => {
+          // console.log(book)
+          // const { img, title, author, id } = book
+          // return <Book title={title} img={img} author={author} />
+          return <Book {...book} key={book.id} number={index} />
+        })}
+      </section>
+    </>
   )
 }
 
