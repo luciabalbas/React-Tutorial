@@ -5,6 +5,12 @@ import ReactDOM from 'react-dom/client'
 // I M P O R T   C S S
 import './index.css'
 
+// I M P O R T  b o o k s
+import { books } from './Books'
+
+// I M P O R T  B O O K
+import Book from './Book'
+
 // F I R S T   C O M P O N E N T
 // function Greeting() {
 //   return (
@@ -89,10 +95,10 @@ const Booklist = () => {
   const displayValue = () => {
     console.log(someValue)
   }
-  const getBook = (id) => {
-    const book = books.find((book) => book.id === id)
-    console.log(book)
-  }
+  // const getBook = (id) => {
+  //   const book = books.find((book) => book.id === id)
+  //   console.log(book)
+  // }
   return (
     <section className="booklist">
       {/* <EventExample /> */}
@@ -100,45 +106,47 @@ const Booklist = () => {
         // console.log(book)
         // const { img, title, author, id } = book
         // return <Book title={title} img={img} author={author} />
-        return <Book {...book} key={book.id} getBook={getBook} />
+        return <Book {...book} key={book.id} />
       })}
     </section>
   )
 }
 
-const Book = (props) => {
-  // console.log(props)
-  const { img, title, author, getBook, id } = props
-  // const displayTitle = () => {
-  //   console.log(title)
-  // }
-  const getSingleBook = () => {
-    getBook(id)
-  }
-  return (
-    <article className="book">
-      <img src={img} alt={title} />
-      <h2>{title}</h2>
-      <button onClick={getSingleBook}>display Title</button>
-      <h4>{author}</h4>
-    </article>
-  )
-}
+// Book  MOVED TO HIS OWN ARCHIVE
+// const Book = (props) => {
+//   // console.log(props)
+//   const { img, title, author, id } = props
+//   // const displayTitle = () => {
+//   //   console.log(title)
+//   // }
+//   // const getSingleBook = () => {
+//   //   getBook(id)
+//   // }
+//   return (
+//     <article className="book">
+//       <img src={img} alt={title} />
+//       <h2>{title}</h2>
+//       <button>display Title</button>
+//       <h4>{author}</h4>
+//     </article>
+//   )
+// }
 
-const books = [
-  {
-    author: 'Rebecca Yarros',
-    title: 'Onyx Storm',
-    img: 'https://m.media-amazon.com/images/I/91rcGxdclIL._SY466_.jpg',
-    id: 1,
-  },
-  {
-    author: 'Holly Jackson',
-    title: "A Good Girl's Guide to Murder",
-    img: 'https://m.media-amazon.com/images/I/81E3hDPr3eL._SY425_.jpg',
-    id: 2,
-  },
-]
+// books  MOVED TO HIS OWN ARCHIVE
+// const books = [
+//   {
+//     author: 'Rebecca Yarros',
+//     title: 'Onyx Storm',
+//     img: 'https://m.media-amazon.com/images/I/91rcGxdclIL._SY466_.jpg',
+//     id: 1,
+//   },
+//   {
+//     author: 'Holly Jackson',
+//     title: "A Good Girl's Guide to Murder",
+//     img: 'https://m.media-amazon.com/images/I/81E3hDPr3eL._SY425_.jpg',
+//     id: 2,
+//   },
+// ]
 
 // E V E N T S
 const EventExample = () => {
