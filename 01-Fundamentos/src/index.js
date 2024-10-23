@@ -89,14 +89,18 @@ const Booklist = () => {
   const displayValue = () => {
     console.log(someValue)
   }
+  const getBook = (id) => {
+    const book = books.find((book) => book.id === id)
+    console.log(book)
+  }
   return (
     <section className="booklist">
       {/* <EventExample /> */}
-      {books.map((book, index) => {
+      {books.map((book) => {
         // console.log(book)
         // const { img, title, author, id } = book
         // return <Book title={title} img={img} author={author} />
-        return <Book {...book} key={index} displayValue={displayValue} />
+        return <Book {...book} key={book.id} getBook={getBook} />
       })}
     </section>
   )
@@ -104,15 +108,18 @@ const Booklist = () => {
 
 const Book = (props) => {
   // console.log(props)
-  const { img, title, author, displayValue } = props
-  const displayTitle = () => {
-    console.log(title)
+  const { img, title, author, getBook, id } = props
+  // const displayTitle = () => {
+  //   console.log(title)
+  // }
+  const getSingleBook = () => {
+    getBook(id)
   }
   return (
     <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
-      <button onClick={displayValue}>click me</button>
+      <button onClick={getSingleBook}>display Title</button>
       <h4>{author}</h4>
     </article>
   )
