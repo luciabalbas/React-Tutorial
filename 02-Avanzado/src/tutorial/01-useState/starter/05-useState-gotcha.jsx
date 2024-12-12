@@ -7,11 +7,20 @@ const UseStateGotcha = () => {
     // setValue(value + 1)
     // console.log(value)
 
-    setValue((currentSate) => {
-      const newSate = currentSate + 1
-      return newSate
-    })
-    console.log(value)
+    // setValue((currentSate) => {
+    //   const newSate = currentSate + 1
+    //   return newSate
+    // })
+    // // ahora el console log es correcto
+    // console.log(value)
+
+    setTimeout(() => {
+      console.log('clicked the button')
+
+      setValue((currentSate) => {
+        return currentSate + 1
+      })
+    }, 3000)
   }
 
   return (
