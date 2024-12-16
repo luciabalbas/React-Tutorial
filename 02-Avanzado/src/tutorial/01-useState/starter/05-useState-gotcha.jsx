@@ -16,7 +16,6 @@ const UseStateGotcha = () => {
 
     setTimeout(() => {
       console.log('clicked the button')
-
       setValue((currentSate) => {
         return currentSate + 1
       })
